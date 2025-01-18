@@ -32,3 +32,8 @@ Setelah server aktif, Anda dapat menjalankan aplikasi dengan langkah-langkah ber
   Pastikan Anda berada di folder root projek dan menjalankan perintah berikut untuk menginstal semua dependensi yang diperlukan:
   ```bash
   npm install
+
+- **Start Aplikasi**:
+  Setelah itu, jalankan aplikasi Vite dengan perintah:
+  ```bash
+  npm run dev
