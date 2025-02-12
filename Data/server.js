@@ -1,13 +1,14 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+require('dotenv').config(); // Tambahkan ini untuk memuat variabel lingkungan dari file .env
 
 // Membuat koneksi ke database
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'technicaltest'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 // Membuat server Express
@@ -62,6 +63,7 @@ app.post('/api/addData', (req, res) => {
   });
 });
 
+// Menangani request GET untuk update data
 app.get('/api/editData/:id', (req, res) => {
   const { id } = req.params;
   console.log('Fetching data for ID:', id); // Debug log
